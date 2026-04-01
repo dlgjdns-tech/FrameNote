@@ -29,7 +29,7 @@
         nav .container { flex-direction: row; justify-content: space-between; }
         .logo { font-weight: 700; font-size: 1.1rem; color: var(--primary-color); }
 
-        /* Hero Section - 배경 이미지 적용 */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(26, 42, 58, 0.7), rgba(26, 42, 58, 0.7)), 
                         url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
@@ -45,7 +45,7 @@
         .section-header { margin-bottom: 45px; width: 100%; }
         .section-header h2 { font-size: clamp(1.5rem, 5vw, 2rem); color: var(--primary-color); margin-bottom: 12px; }
 
-        /* Expert Section - 임상심리사 역할 명확화 (현직 삭제) */
+        /* Expert Section */
         .profile-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; width: 100%; }
         .profile-card {
             background: #fff; padding: 40px 25px; border-radius: 15px; border: 1px solid #eee;
@@ -58,14 +58,14 @@
         .profile-card.main { border: 2px solid var(--accent-color); box-shadow: 0 10px 25px rgba(52, 168, 83, 0.08); }
         .badge { background: var(--accent-color); color: #fff; font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; font-weight: 600; }
 
-        /* Value Section - 공감형 문구 유지 및 목적 강조 */
+        /* Value Section */
         .value-section { background-color: var(--bg-section); }
         .value-box { background: #fff; padding: 40px 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); max-width: 850px; width: 100%; }
         .value-box p { font-size: 1rem; color: #555; line-height: 1.9; margin-bottom: 15px; }
         .value-box p:last-child { margin-bottom: 0; font-weight: 500; color: var(--primary-color); }
         .highlight { color: var(--accent-color); font-weight: 700; }
 
-        /* Policy Section - 이미지 스타일 박스 */
+        /* Policy Section (이미지 스타일) */
         .info-box {
             background: #eef7f2; border-left: 5px solid var(--success-color);
             padding: 30px; border-radius: 4px; text-align: left; max-width: 800px; width: 100%; margin-top: 20px;
@@ -76,7 +76,7 @@
         .info-box ul li::before { content: '•'; position: absolute; left: 0; font-weight: bold; }
         .warning-text { color: var(--warning-color); font-weight: 500; margin-top: 5px; display: block; }
 
-        /* FAQ Section - 복구 및 스크립트 수정 */
+        /* FAQ Section */
         .faq-box { max-width: 800px; margin: 0 auto; width: 100%; text-align: left; }
         .faq-item { background: #fff; margin-bottom: 12px; padding: 18px; border-radius: 10px; border: 1px solid #eee; cursor: pointer; }
         .faq-item h4 { margin: 0; font-size: 1.05rem; display: flex; justify-content: space-between; align-items: center; color: var(--primary-color); }
@@ -171,10 +171,14 @@
             </div>
             <div class="faq-box">
                 <div class="faq-item" onclick="toggleFaq(0)">
+                    <h4>Q. 진로상담은 직업상담과 다른건가요? <i class="fas fa-chevron-down"></i></h4>
+                    <p class="faq-content">단순한 일자리 매칭인 '직업상담'과 달리, 본 상담은 심리학적 성찰을 통해 개인의 가치와 존재에 기반한 '진로 프레임'을 설계합니다. 나다운 삶의 방향을 먼저 설정하고 그에 맞는 경로를 함께 고민하는 과정입니다.</p>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(1)">
                     <h4>Q. 예약 변경은 어떻게 하나요? <i class="fas fa-chevron-down"></i></h4>
                     <p class="faq-content">사전 예약제로 운영되기에 갑작스러운 취소보다는 미리 연락을 주시면 일정 조정에 큰 도움이 됩니다. 따뜻한 배려에 감사드립니다.</p>
                 </div>
-                <div class="faq-item" onclick="toggleFaq(1)">
+                <div class="faq-item" onclick="toggleFaq(2)">
                     <h4>Q. 상담 내용은 비밀이 보장되나요? <i class="fas fa-chevron-down"></i></h4>
                     <p class="faq-content">상담 윤리에 따라 개인 식별 정보는 철저히 익명화되며, 오직 더 나은 프로그램을 개발하기 위한 연구 목적으로만 활용됩니다.</p>
                 </div>
