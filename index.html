@@ -29,34 +29,31 @@
         nav .container { flex-direction: row; justify-content: space-between; }
         .logo { font-weight: 700; font-size: 1.1rem; color: var(--primary-color); }
 
-        /* Hero Section */
+        /* Hero Section - 메인 메시지 변경 */
         .hero {
             background: linear-gradient(rgba(26, 42, 58, 0.7), rgba(26, 42, 58, 0.7)), 
                         url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
             background-size: cover; background-position: center; color: white; 
-            padding: 100px 20px; min-height: 420px;
+            padding: 100px 20px; min-height: 480px;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
         }
-        .hero h1 { font-size: clamp(1.6rem, 6vw, 2.5rem); font-weight: 700; margin-bottom: 15px; line-height: 1.3; }
+        .hero h1 { font-size: clamp(1.6rem, 6vw, 2.5rem); font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
+        .hero h1 span { color: #f1c40f; display: block; font-size: 0.7em; margin-bottom: 10px; opacity: 0.9; }
         .hero p { font-size: clamp(1rem, 4vw, 1.15rem); opacity: 0.9; margin-bottom: 30px; max-width: 650px; }
+
+        /* Question & Answer Section (New) */
+        .qa-section { background-color: #fff; padding: 80px 0; }
+        .qa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; width: 100%; margin-top: 40px; }
+        .qa-card { background: var(--bg-section); padding: 35px 25px; border-radius: 15px; text-align: left; transition: 0.3s; }
+        .qa-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .qa-card .question { color: var(--text-light); font-size: 0.95rem; font-weight: 500; margin-bottom: 15px; display: block; }
+        .qa-card .answer { color: var(--primary-color); font-size: 1.1rem; font-weight: 700; line-height: 1.5; }
+        .qa-card .answer em { font-style: normal; color: var(--accent-color); }
 
         /* Section Commons */
         section { padding: 70px 0; width: 100%; }
         .section-header { margin-bottom: 45px; width: 100%; }
         .section-header h2 { font-size: clamp(1.5rem, 5vw, 2rem); color: var(--primary-color); margin-bottom: 12px; }
-
-        /* Expert Section */
-        .profile-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; width: 100%; }
-        .profile-card {
-            background: #fff; padding: 40px 25px; border-radius: 15px; border: 1px solid #eee;
-            display: flex; flex-direction: column; align-items: center;
-        }
-        .profile-card i { font-size: 2.3rem; color: var(--accent-color); margin-bottom: 20px; }
-        .profile-card h3 { margin: 10px 0; font-size: 1.25rem; color: var(--primary-color); }
-        .profile-card p.spec { font-weight: 600; color: var(--accent-color); margin-bottom: 15px; font-size: 0.95rem; }
-        .profile-card p.role-desc { font-size: 0.92rem; color: #666; line-height: 1.6; }
-        .profile-card.main { border: 2px solid var(--accent-color); box-shadow: 0 10px 25px rgba(52, 168, 83, 0.08); }
-        .badge { background: var(--accent-color); color: #fff; font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; font-weight: 600; }
 
         /* Value Section */
         .value-section { background-color: var(--bg-section); }
@@ -75,6 +72,19 @@
         .info-box ul li { position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.95rem; color: #444; }
         .info-box ul li::before { content: '•'; position: absolute; left: 0; font-weight: bold; }
         .warning-text { color: var(--warning-color); font-weight: 500; margin-top: 5px; display: block; }
+
+        /* Expert Section */
+        .profile-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; width: 100%; }
+        .profile-card {
+            background: #fff; padding: 40px 25px; border-radius: 15px; border: 1px solid #eee;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .profile-card i { font-size: 2.3rem; color: var(--accent-color); margin-bottom: 20px; }
+        .profile-card h3 { margin: 10px 0; font-size: 1.25rem; color: var(--primary-color); }
+        .profile-card p.spec { font-weight: 600; color: var(--accent-color); margin-bottom: 15px; font-size: 0.95rem; }
+        .profile-card p.role-desc { font-size: 0.92rem; color: #666; line-height: 1.6; }
+        .profile-card.main { border: 2px solid var(--accent-color); box-shadow: 0 10px 25px rgba(52, 168, 83, 0.08); }
+        .badge { background: var(--accent-color); color: #fff; font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; font-weight: 600; }
 
         /* FAQ Section */
         .faq-box { max-width: 800px; margin: 0 auto; width: 100%; text-align: left; }
@@ -100,22 +110,45 @@
 
     <header class="hero">
         <div class="container">
-            <h1>나만의 진로 프레임을 그리다</h1>
-            <p>심리학적 성찰을 통해 삶의 방향성을 찾는 1:1 맞춤형 진로 상담</p>
+            <h1><span>"진로상담은 직업매칭이 아닙니다"</span>나만의 진로 프레임을 그리다</h1>
+            <p>단순한 일자리 찾기를 넘어, 심리학적 성찰을 통해 삶의 '구조'를 설계하고 실질적인 방향성을 찾습니다.</p>
             <a href="#reservation" class="btn btn-accent">상담 신청하기</a>
         </div>
     </header>
 
+    <section class="qa-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>뻔한 위로 대신, 실존적 해답을 드립니다</h2>
+                <p>어디선가 들어본 익숙한 답변이 당신의 고민을 해결해주지 못했다면,<br>프레임노트가 제안하는 '다른 관점'이 필요할 때입니다.</p>
+            </div>
+            <div class="qa-grid">
+                <div class="qa-card">
+                    <span class="question">"내가 뭘 좋아하는지 모르겠어요."</span>
+                    <p class="answer">우리는 당신이 무엇을 좋아하는지 묻지 않습니다. <em>당신이 어떤 가치를 지키고 싶은지</em>를 먼저 구조화합니다.</p>
+                </div>
+                <div class="qa-card">
+                    <span class="question">"왜 살아야 하는지 모르겠어요."</span>
+                    <p class="answer">의미는 찾는 것이 아니라 <em>결단하는 것</em>입니다. 혼란스러운 마음을 논리적인 체계로 정리해 드립니다.</p>
+                </div>
+                <div class="qa-card">
+                    <span class="question">"하고 싶은 일이 없어요."</span>
+                    <p class="answer">직업(Job)이라는 좁은 틀 대신, <em>당신만의 고유한 업(Career)</em>을 정의하는 법을 함께 고민합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="value" class="value-section">
         <div class="container">
             <div class="section-header">
-                <h2>무료 상담 프로젝트의 가치</h2>
-                <p>단순한 나눔을 넘어, 우리 삶에 꼭 필요한<br><strong>'진심 어린 진로 지원 모델'</strong>을 만드는 여정입니다.</p>
+                <h2>상담 프로젝트의 윈-윈(Win-Win) 가치</h2>
+                <p>우리는 여러분의 질문에 명확히 답하고,<br>여러분은 우리 연구의 소중한 근거가 되어주세요.</p>
             </div>
             <div class="value-box">
-                <p>우리는 상담을 통해 회복된 마음이 실제 삶의 변화로 이어지는 과정을 깊이 있게 연구하고 있습니다. 이 과정은 향후 <span class="highlight">더 많은 청년과 사람들을 위한 전문적인 진로 프로그램을 개발</span>하고, 현장의 목소리가 담긴 정책을 제안하기 위한 소중한 발판이 됩니다.</p>
-                <p>여러분이 상담을 통해 보여주시는 소중한 변화의 발자취는, 앞으로 사각지대에 놓인 이웃들을 돕는 핵심적인 지표가 될 것입니다.</p>
-                <p>당신의 성장이 곧 우리 모두의 성공입니다. 더 넓은 세상으로 나가는 첫 발걸음을 우리와 함께 시작해 주세요.</p>
+                <p>여러분이 마주한 진로의 고민에 프레임노트가 제시하는 해답이 도움이 될 것 같다면 망설이지 마세요. 이 상담은 여러분에게는 <span class="highlight">삶의 명확한 구조</span>를 선물하고, 우리에게는 <span class="highlight">전문적인 프로그램 개발을 위한 실적</span>이 되는 완벽한 윈-윈 프로젝트입니다.</p>
+                <p>현장의 목소리를 담은 공신력 있는 모델을 만들기 위해, 우리는 기꺼이 여러분의 고민에 모든 전문성을 쏟을 준비가 되어 있습니다.</p>
+                <p>당신의 성장이 곧 우리 모델의 증명입니다. 함께 더 나은 시스템을 만들어갈 여러분을 기다립니다.</p>
             </div>
         </div>
     </section>
@@ -154,7 +187,7 @@
                 <ul>
                     <li><strong>상담 시간:</strong> 회당 약 50분 내외 진행</li>
                     <li><strong>비용 및 조건:</strong> 변화 데이터 활용 동의 시 무료 (프로그램 개발 실적으로 활용)</li>
-                    <li><strong>장소:</strong> 새순심리상담연구소 내 상담실 (협력 공간)</li>
+                    <li><strong>장소:</strong> [천안 백석동] 새순심리상담연구소 (협력 공간)</li>
                     <li>
                         <strong>소중한 약속:</strong> 예약된 시간은 상담사가 온전히 여러분을 위해 준비하는 시간입니다. 
                         <span class="warning-text">부득이하게 방문이 어려우신 경우, 다른 분들이 기회를 얻으실 수 있도록 꼭 미리 말씀 부탁드립니다.</span>
@@ -194,7 +227,7 @@
 
     <footer>
         <div class="container">
-            <p>협력 기관: 새순심리상담연구소 | 본 프로젝트는 프레임노트(Frame Note)에 의해 독립 운영됩니다.</p>
+            <p>협력 기관: 새순심리상담연구소(천안 백석동) | 본 프로젝트는 프레임노트(Frame Note)에 의해 독립 운영됩니다.</p>
             <p>&copy; 2026 Frame Note. All rights reserved.</p>
         </div>
     </footer>
