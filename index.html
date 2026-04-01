@@ -29,19 +29,19 @@
         nav .container { flex-direction: row; justify-content: space-between; }
         .logo { font-weight: 700; font-size: 1.1rem; color: var(--primary-color); }
 
-        /* Hero Section - 메인 메시지 변경 */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(26, 42, 58, 0.7), rgba(26, 42, 58, 0.7)), 
                         url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
             background-size: cover; background-position: center; color: white; 
-            padding: 100px 20px; min-height: 480px;
+            padding: 110px 20px; min-height: 500px;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
         }
         .hero h1 { font-size: clamp(1.6rem, 6vw, 2.5rem); font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
         .hero h1 span { color: #f1c40f; display: block; font-size: 0.7em; margin-bottom: 10px; opacity: 0.9; }
-        .hero p { font-size: clamp(1rem, 4vw, 1.15rem); opacity: 0.9; margin-bottom: 30px; max-width: 650px; }
+        .hero p { font-size: clamp(1rem, 4vw, 1.15rem); opacity: 0.9; margin-bottom: 35px; max-width: 650px; }
 
-        /* Question & Answer Section (New) */
+        /* QA Section */
         .qa-section { background-color: #fff; padding: 80px 0; }
         .qa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; width: 100%; margin-top: 40px; }
         .qa-card { background: var(--bg-section); padding: 35px 25px; border-radius: 15px; text-align: left; transition: 0.3s; }
@@ -49,11 +49,7 @@
         .qa-card .question { color: var(--text-light); font-size: 0.95rem; font-weight: 500; margin-bottom: 15px; display: block; }
         .qa-card .answer { color: var(--primary-color); font-size: 1.1rem; font-weight: 700; line-height: 1.5; }
         .qa-card .answer em { font-style: normal; color: var(--accent-color); }
-
-        /* Section Commons */
-        section { padding: 70px 0; width: 100%; }
-        .section-header { margin-bottom: 45px; width: 100%; }
-        .section-header h2 { font-size: clamp(1.5rem, 5vw, 2rem); color: var(--primary-color); margin-bottom: 12px; }
+        .qa-footer { margin-top: 40px; font-weight: 500; color: var(--accent-color); font-size: 1.1rem; }
 
         /* Value Section */
         .value-section { background-color: var(--bg-section); }
@@ -93,9 +89,10 @@
         .faq-content { margin-top: 15px; font-size: 0.95rem; color: #666; display: none; line-height: 1.7; border-top: 1px solid #f0f0f0; padding-top: 15px; }
 
         /* Buttons */
-        .btn { display: inline-block; width: 100%; max-width: 300px; padding: 17px 20px; border-radius: 50px; font-weight: 600; font-size: 1.05rem; transition: 0.3s; cursor: pointer; border: none; }
-        .btn-accent { background-color: var(--accent-color); color: white; box-shadow: 0 5px 15px rgba(52, 168, 83, 0.2); }
+        .btn { display: inline-block; width: 100%; max-width: 320px; padding: 18px 20px; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-accent { background-color: var(--accent-color); color: white; box-shadow: 0 5px 20px rgba(52, 168, 83, 0.3); }
         .btn-accent:hover { transform: translateY(-3px); }
+        .btn-tag { display: block; font-size: 0.85rem; color: #f1c40f; margin-top: 10px; font-weight: 400; opacity: 0.9; }
 
         footer { background: #1a2a3a; color: #999; padding: 50px 20px; width: 100%; font-size: 0.85rem; }
     </style>
@@ -112,7 +109,10 @@
         <div class="container">
             <h1><span>"진로상담은 직업매칭이 아닙니다"</span>나만의 진로 프레임을 그리다</h1>
             <p>단순한 일자리 찾기를 넘어, 심리학적 성찰을 통해 삶의 '구조'를 설계하고 실질적인 방향성을 찾습니다.</p>
-            <a href="#reservation" class="btn btn-accent">상담 신청하기</a>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <a href="#reservation" class="btn btn-accent">1:1 무료 상담 신청하기</a>
+                <span class="btn-tag">* 본 상담은 연구 프로젝트 참여 동의 시 무료로 진행됩니다.</span>
+            </div>
         </div>
     </header>
 
@@ -135,6 +135,9 @@
                     <span class="question">"하고 싶은 일이 없어요."</span>
                     <p class="answer">직업(Job)이라는 좁은 틀 대신, <em>당신만의 고유한 업(Career)</em>을 정의하는 법을 함께 고민합니다.</p>
                 </div>
+            </div>
+            <div class="qa-footer">
+                <i class="fas fa-gift"></i> 이 모든 과정은 연구 데이터 활용 동의 시 <strong>전액 무료</strong>로 제공됩니다.
             </div>
         </div>
     </section>
@@ -186,8 +189,8 @@
                 <h4><i class="fas fa-check-square"></i> 참여 조건 및 안내</h4>
                 <ul>
                     <li><strong>상담 시간:</strong> 회당 약 50분 내외 진행</li>
-                    <li><strong>비용 및 조건:</strong> 변화 데이터 활용 동의 시 무료 (프로그램 개발 및 공공기관 제안 실적으로 활용)</li>
-                    <li><strong>장소:</strong> [천안 백석동] 새순심리상담연구소 (협력 공간)</li>
+                    <li><strong>비용:</strong> <strong style="color: var(--accent-color); font-size: 1.1rem;">전액 무료</strong> (연구 데이터 활용 동의 시)</li>
+                    <li><strong>장소:</strong> [천안 백석동] 새순심리상담연구소 내 상담실 (협력 공간)</li>
                     <li>
                         <strong>소중한 약속:</strong> 예약된 시간은 상담사가 온전히 여러분을 위해 준비하는 시간입니다. 
                         <span class="warning-text">부득이하게 방문이 어려우신 경우, 다른 분들이 기회를 얻으실 수 있도록 꼭 미리 말씀 부탁드립니다.</span>
@@ -208,26 +211,27 @@
                     <p class="faq-content">단순한 일자리 매칭인 '직업상담'과 달리, 본 상담은 심리학적 성찰을 통해 개인의 가치와 존재에 기반한 '진로 프레임'을 설계합니다. 나다운 삶의 방향을 먼저 설정하고 그에 맞는 경로를 함께 고민하는 과정입니다.</p>
                 </div>
                 <div class="faq-item" onclick="toggleFaq(1)">
-                    <h4>Q. 예약 변경은 어떻게 하나요? <i class="fas fa-chevron-down"></i></h4>
-                    <p class="faq-content">사전 예약제로 운영되기에 갑작스러운 취소보다는 미리 연락을 주시면 일정 조정에 큰 도움이 됩니다. 따뜻한 배려에 감사드립니다.</p>
+                    <h4>Q. 정말 무료인가요? <i class="fas fa-chevron-down"></i></h4>
+                    <p class="faq-content">네, 맞습니다. 더 나은 진로 지원 모델을 개발 위한 연구 프로젝트의 일환으로 진행되기 때문에 별도의 비용이 발생하지 않습니다. 대신 여러분의 상담 사례가 익명화되어 연구 실적으로 활용됨에 동의해 주셔야 합니다.</p>
                 </div>
                 <div class="faq-item" onclick="toggleFaq(2)">
-                    <h4>Q. 상담 내용은 비밀이 보장되나요? <i class="fas fa-chevron-down"></i></h4>
-                    <p class="faq-content">상담 윤리에 따라 개인 식별 정보는 철저히 익명화되며, 오직 더 나은 프로그램을 개발하기 위한 연구 목적으로만 활용됩니다.</p>
+                    <h4>Q. 예약 변경은 어떻게 하나요? <i class="fas fa-chevron-down"></i></h4>
+                    <p class="faq-content">사전 예약제로 운영되기에 갑작스러운 취소보다는 미리 연락을 주시면 일정 조정에 큰 도움이 됩니다. 따뜻한 배려에 감사드립니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="reservation">
+    <section id="reservation" style="padding-top: 20px;">
         <div class="container">
-            <a href="https://booking.naver.com/YOUR_LINK" class="btn btn-accent" target="_blank">네이버 예약 바로가기</a>
+            <div style="margin-bottom: 25px; font-size: 1.1rem; font-weight: 500;">프레임노트 진로연구소의 첫 걸음에 함께해 주세요.</div>
+            <a href="https://booking.naver.com/YOUR_LINK" class="btn btn-accent" target="_blank">무료 상담 예약하기 (네이버)</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>협력 기관: 새순심리상담연구소(천안 백석동) | 본 프로젝트는 프레임노트(Frame Note)에 의해 독립 운영됩니다.</p>
+            <p>협력 기관: 새순심리상담연구소 | 본 프로젝트는 프레임노트(Frame Note)에 의해 독립 운영됩니다.</p>
             <p>&copy; 2026 Frame Note. All rights reserved.</p>
         </div>
     </footer>
