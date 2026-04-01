@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진로상담 프로젝트 | 전문적 커리어 설계</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #27ae60;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .logo { font-weight: 700; font-size: 1.2rem; color: var(--primary-color); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 10%;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
+
+        /* Content Sections */
+        section { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2rem; color: var(--primary-color); }
+
+        /* Profile Cards */
+        .profile-container { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+        .profile-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Program Info */
+        .info-box {
+            background: #eef7f2;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* CTA Button */
+        .btn-reservation {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .btn-reservation:hover { transform: translateY(-3px); background: #219150; }
+
+        footer { background: #333; color: #ccc; text-align: center; padding: 40px; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            section { padding: 50px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">프레임노트 진로연구소</div>
+    </nav>
+
+    <header class="hero">
+        <h1>당신의 커리어에 확신을 더합니다</h1>
+        <p>진로·직업상담 석사와 5년 경력 임상심리사가 제안하는 전문 진로 설계</p>
+        <a href="#reservation" class="btn-reservation">무료 상담 신청하기</a>
+    </header>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>상담 전문가 소개</h2>
+        </div>
+        <div class="profile-container">
+            <div class="profile-card">
+                <h3>진로 전문가</h3>
+                <p><strong>진로·직업상담 전공 석사</strong></p>
+                <p>개인별 맞춤형 진로 로드맵 설계 및 경력 개발 전략 수립 전문가</p>
+            </div>
+            <div class="profile-card">
+                <h3>임상 심리 파트너</h3>
+                <p><strong>현직 임상심리사 (경력 5년)</strong></p>
+                <p>심리적 기저 탐색 및 정서적 안정을 바탕으로 한 심층 심리 자문</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="program" style="background-color: var(--bg-light);">
+        <div class="section-title">
+            <h2>무료 진로상담 프로젝트 안내</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p>본 상담은 더 나은 진로 지원 모델 개발을 위한 <strong>연구 데이터 수집 목적</strong>으로 한시적 무료 진행됩니다.</p>
+            
+            <div class="info-box">
+                <h4>✅ 참여 조건 및 안내</h4>
+                <ul>
+                    <li>상담 내용은 비식별화(익명) 처리되어 향후 연구 및 제안 자료로 활용됩니다.</li>
+                    <li>상담 종료 후 간단한 만족도 설문에 참여해 주셔야 합니다.</li>
+                    <li><strong>장소:</strong> 새순심리상담연구소 내 상담실 (협력 공간)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservation" style="text-align: center;">
+        <div class="section-title">
+            <h2>상담 신청하기</h2>
+            <p>네이버 예약을 통해 편리하게 일정을 선택하실 수 있습니다.</p>
+        </div>
+        <a href="https://booking.naver.com/YOUR_LINK_HERE" class="btn-reservation" target="_blank">네이버 예약 바로가기</a>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">* '진로상담(무료)' 항목을 선택해 주세요.</p>
+    </section>
+
+    <footer>
+        <p>협력 기관: 새순심리상담연구소 | 본 프로젝트는 [사용자성함/브랜드명]에 의해 운영됩니다.</p>
+        <p>&copy; 2026 Frame Note. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
