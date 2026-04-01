@@ -12,7 +12,7 @@
         :root {
             --primary-color: #1a2a3a;
             --accent-color: #34a853;
-            --warning-color: #d93025;
+            --warning-color: #e67e22; /* 레드 대신 차분한 오렌지 톤으로 변경 */
             --text-dark: #333;
             --text-light: #777;
             --bg-light: #ffffff;
@@ -24,14 +24,14 @@
         a { text-decoration: none; color: inherit; }
         .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* Navigation - Mobile Optimized */
+        /* Navigation */
         nav { background: #fff; padding: 12px 0; position: sticky; top: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); z-index: 1000; }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 700; font-size: 1.1rem; color: var(--primary-color); white-space: nowrap; }
         .nav-social { display: flex; gap: 12px; }
         .nav-social a { font-size: 1.3rem; color: #555; padding: 5px; }
 
-        /* Hero Section - Mobile Aspect Ratio */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(26, 42, 58, 0.75), rgba(26, 42, 58, 0.75)), 
                         url('https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&w=1200&q=80');
@@ -46,9 +46,8 @@
         section { padding: 60px 0; }
         .section-header { text-align: center; margin-bottom: 40px; }
         .section-header h2 { font-size: clamp(1.4rem, 5vw, 2.1rem); color: var(--primary-color); margin-bottom: 10px; }
-        .section-header p { font-size: 1rem; color: var(--text-light); padding: 0 10px; }
 
-        /* Profile Cards - Responsive Grid */
+        /* Profile Cards */
         .profile-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .profile-card {
             background: #fff; padding: 30px 20px; border-radius: 12px; border: 1px solid #eee;
@@ -57,24 +56,24 @@
         .profile-card i { font-size: 2.2rem; color: var(--accent-color); margin-bottom: 15px; }
         .profile-card h3 { margin: 10px 0; font-size: 1.25rem; }
         .profile-card p.spec { font-weight: 500; color: var(--accent-color); margin-bottom: 10px; font-size: 0.95rem; }
-        .profile-card p.desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.5; }
 
-        /* Policy - Responsive Box */
+        /* Policy Section */
         .policy-grid { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
         .policy-item { background: #fff; padding: 20px; border-radius: 10px; border-left: 4px solid var(--accent-color); box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
-        .policy-item.warning { border-left-color: var(--warning-color); background: #fffaf9; }
+        .policy-item.warning { border-left-color: var(--warning-color); }
         .policy-item h4 { margin: 0 0 8px 0; font-size: 1.05rem; color: var(--primary-color); display: flex; align-items: center; gap: 8px; }
         .policy-item p { margin: 0; font-size: 0.9rem; color: #555; }
 
         /* FAQ */
         .faq { background: var(--bg-section); }
-        .faq-item { background: #fff; margin-bottom: 10px; padding: 15px; border-radius: 8px; border: 1px solid #efefef; }
-        .faq-item h4 { margin: 0; font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item { background: #fff; margin-bottom: 10px; padding: 15px; border-radius: 8px; border: 1px solid #efefef; cursor: pointer; }
+        .faq-item h4 { margin: 0; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; }
         .faq-content { margin-top: 12px; font-size: 0.9rem; color: #666; display: none; line-height: 1.6; border-top: 1px solid #f5f5f5; padding-top: 10px; }
 
-        /* Buttons - Mobile Full Width */
+        /* Buttons */
         .btn { display: inline-block; width: 100%; max-width: 320px; padding: 16px 20px; border-radius: 50px; font-weight: 600; font-size: 1.05rem; text-align: center; }
-        .btn-accent { background-color: var(--accent-color); color: white; box-shadow: 0 4px 12px rgba(52, 168, 83, 0.2); }
+        .btn-accent { background-color: var(--accent-color); color: white; box-shadow: 0 4px 12px rgba(52, 168, 83, 0.2); transition: 0.3s; }
+        .btn-accent:hover { transform: translateY(-2px); opacity: 0.9; }
 
         /* Footer */
         footer { background: #1a2a3a; color: #bbb; padding: 50px 20px; text-align: center; }
@@ -82,12 +81,10 @@
         .footer-social a { font-size: 1.5rem; color: #fff; opacity: 0.8; }
         .footer-info { font-size: 0.8rem; line-height: 1.8; opacity: 0.6; }
 
-        /* Tablet & Desktop Adjustments */
         @media (min-width: 768px) {
             .policy-grid { flex-direction: row; }
-            .policy-item { flex: 1; border-left: none; border-top: 4px solid var(--accent-color); text-align: center; justify-content: center; }
+            .policy-item { flex: 1; border-left: none; border-top: 4px solid var(--accent-color); text-align: center; }
             .policy-item h4 { justify-content: center; }
-            section { padding: 80px 0; }
             .btn { width: auto; padding: 18px 60px; }
             .logo { font-size: 1.4rem; }
         }
@@ -109,7 +106,7 @@
         <div class="container">
             <h1>나만의 커리어 프레임을 그리다</h1>
             <p>석사 출신 진로 전문가와 5년 경력 임상심리사의 협업 프로젝트</p>
-            <a href="#reservation" class="btn btn-accent">50분 무료상담 신청하기</a>
+            <a href="#reservation" class="btn btn-accent">무료 상담 신청하기</a>
         </div>
     </header>
 
@@ -139,21 +136,21 @@
     <section id="policy" style="background-color: var(--bg-section);">
         <div class="container">
             <div class="section-header">
-                <h2>상담 운영 정책</h2>
-                <p>소중한 시간을 지키기 위한 약속입니다.</p>
+                <h2>상담 안내 및 정책</h2>
+                <p>보다 원활한 상담 진행을 위해 아래 내용을 확인해 주세요.</p>
             </div>
             <div class="policy-grid">
                 <div class="policy-item">
                     <h4><i class="far fa-clock"></i> 상담 시간</h4>
-                    <p>회당 <strong>약 50분</strong> 내외 진행</p>
+                    <p>회당 약 50분 내외로 진행됩니다.</p>
                 </div>
                 <div class="policy-item">
                     <h4><i class="fas fa-won-sign"></i> 상담 비용</h4>
-                    <p>연구 참여 동의 시 <strong>전액 무료</strong></p>
+                    <p>연구 데이터 활용 동의 시 무료로 제공됩니다.</p>
                 </div>
                 <div class="policy-item warning">
-                    <h4><i class="fas fa-exclamation-triangle"></i> 노쇼 규정</h4>
-                    <p>노쇼 시 <strong>재신청 영구 불가</strong></p>
+                    <h4><i class="fas fa-info-circle"></i> 예약 관리 안내</h4>
+                    <p>노쇼 발생 시 다른 대기자분들을 위해 추가 신청이 제한될 수 있습니다.</p>
                 </div>
             </div>
         </div>
@@ -165,17 +162,17 @@
                 <h2>자주 묻는 질문</h2>
             </div>
             <div style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item">
-                    <h4 onclick="toggleFaq(0)">Q. 왜 무료인가요? <i class="fas fa-chevron-down"></i></h4>
+                <div class="faq-item" onclick="toggleFaq(0)">
+                    <h4>Q. 왜 무료인가요? <i class="fas fa-chevron-down"></i></h4>
                     <p class="faq-content">진로 지원 모델 개발을 위한 연구 데이터 수집 단계에 있기 때문입니다. 모든 정보는 익명으로 안전하게 처리됩니다.</p>
                 </div>
-                <div class="faq-item">
-                    <h4 onclick="toggleFaq(1)">Q. 상담 장소는 어디인가요? <i class="fas fa-chevron-down"></i></h4>
+                <div class="faq-item" onclick="toggleFaq(1)">
+                    <h4>Q. 상담 장소는 어디인가요? <i class="fas fa-chevron-down"></i></h4>
                     <p class="faq-content">협력 기관인 '새순심리상담연구소' 내 상담실에서 오프라인으로 진행됩니다.</p>
                 </div>
-                <div class="faq-item">
-                    <h4 onclick="toggleFaq(2)">Q. 노쇼 기준은 무엇인가요? <i class="fas fa-chevron-down"></i></h4>
-                    <p class="faq-content">예약 시간 24시간 전까지 취소 없이 불참하거나, 연락 없이 15분 이상 지각할 경우 노쇼로 간주됩니다.</p>
+                <div class="faq-item" onclick="toggleFaq(2)">
+                    <h4>Q. 예약 변경은 언제까지 가능한가요? <i class="fas fa-chevron-down"></i></h4>
+                    <p class="faq-content">최소 24시간 전까지 연락을 주셔야 일정 조정이 원활하며, 다른 대기자분들께 기회가 돌아갈 수 있습니다.</p>
                 </div>
             </div>
         </div>
@@ -185,7 +182,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>상담 신청하기</h2>
-                <p style="color: var(--warning-color); font-weight: 600; font-size: 0.95rem; margin-bottom: 20px;">※ 신중하게 신청해 주세요. 노쇼 시 재신청 불가합니다.</p>
+                <p style="color: var(--warning-color); font-weight: 500; font-size: 0.95rem; margin-bottom: 20px;">한정된 인원으로 진행되는 만큼 일정을 신중히 선택해 주시길 부탁드립니다.</p>
             </div>
             <a href="https://booking.naver.com/YOUR_LINK" class="btn btn-accent" target="_blank">네이버 예약 바로가기</a>
         </div>
